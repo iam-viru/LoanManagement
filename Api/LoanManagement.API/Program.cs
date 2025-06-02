@@ -5,7 +5,6 @@ using LoanManagement.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 
 
@@ -24,6 +23,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 //service will be created for each request
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 var key= Encoding.ASCII.GetBytes(builder.Configuration["Jwt:Key"]);
 

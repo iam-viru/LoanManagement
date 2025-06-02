@@ -33,5 +33,20 @@ namespace LoanManagement.Infrastructure.Repositories
         {
             return await _context.SaveChangesAsync() > 0;
         }
+
+        public Task<IEnumerable<User>> GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<User?> GetByIdAsync(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveUser(User user)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
